@@ -1,6 +1,6 @@
 # Anomaly Vision Model
 
-[![Active model](badges/active-model.svg)](https://github.com/ufo-files/anomaly-vision-model/releases/tag/model-c509de148088bd4ffcfecaf94c65ecab5cb05ecb41810cfafcd58b3069b9e6da)
+[![Active model](badges/active-model.svg)](https://github.com/ufo-files/anomaly-vision-model/releases/tag/model-f6ec235d3299cdd4d33dc5b658cb72ba79814312bd0451f2d0b1d74ec305119d)
 [![Model published](https://img.shields.io/github/release-date/ufo-files/anomaly-vision-model?label=model%20published)](https://github.com/ufo-files/anomaly-vision-model/releases/latest)
 [![Cropped labels](badges/cropped-labels.svg)](https://github.com/ufo-files/anomaly-vision-model/releases/latest)
 
