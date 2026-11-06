@@ -1,5 +1,6 @@
 # Anomaly Vision Model
 
+[![Active model](badges/active-model.svg)](https://github.com/ufo-files/anomaly-vision-model/releases/tag/model-c509de148088bd4ffcfecaf94c65ecab5cb05ecb41810cfafcd58b3069b9e6da)
 [![Model published](https://img.shields.io/github/release-date/ufo-files/anomaly-vision-model?label=model%20published)](https://github.com/ufo-files/anomaly-vision-model/releases/latest)
 [![Cropped labels](badges/cropped-labels.svg)](https://github.com/ufo-files/anomaly-vision-model/releases/latest)
 
@@ -28,6 +29,8 @@ Model releases include:
 The archive retains the filenames `candidate.mlpackage`, `candidate-weights.pt`, and `candidate-policy.json` used during training. These names do not describe deployment status: published bundles represent deployed models.
 
 Use the Core ML package together with its matching policy in Field Station's native recognition pipeline. The policy defines preprocessing and classification behavior. The legacy `inference.py` in this repository does not load these Core ML releases. Training images, individual review records, and full recordings are not included in current model bundles.
+
+The active-model badge mirrors the station header’s 12-character hash and links to that version’s release. It syncs from the station’s confirmed runtime status; if the station is unreachable, it retains the last confirmed version.
 
 The cropped-label badge counts human-reviewed training crops used by the latest published model. It updates with model publication, rather than with unsaved or newly reviewed frames.
 
