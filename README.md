@@ -1,7 +1,7 @@
 # Anomaly Vision Model
 
 [![Model published](https://img.shields.io/github/release-date/ufo-files/anomaly-vision-model?label=model%20published)](https://github.com/ufo-files/anomaly-vision-model/releases/latest)
-[![Cropped labels](https://github.com/ufo-files/anomaly-vision-model/releases/latest/download/labels-badge.svg)](https://github.com/ufo-files/anomaly-vision-model/releases/latest)
+[![Cropped labels](badges/cropped-labels.svg)](https://github.com/ufo-files/anomaly-vision-model/releases/latest)
 
 Visual anomaly classification for [UFO Files Field Station](https://github.com/ufo-files/field-station). The current model classifies detected camera-image crops as **Anomalous** or **Not Anomalous**, using examples reviewed by the station operator.
 
