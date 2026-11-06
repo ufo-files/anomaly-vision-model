@@ -9,20 +9,21 @@ import json
 import re
 import subprocess
 import urllib.request
+from xml.sax.saxutils import escape
+import xml.etree.ElementTree as ET
 from pathlib import Path
 
 
 def svg(version):
     if not re.fullmatch(r"[a-f0-9]{64}", version):
         raise ValueError("Invalid active model hash")
-    return f'''<svg xmlns="http://www.w3.org/2000/svg" width="218" height="20" role="img" aria-label="active model: {version[:12]}">
-<title>Active model: {version}</title>
-<rect width="218" height="20" rx="3" fill="#555"/>
-<path fill="#4c1" d="M88 0h127q3 0 3 3v14q0 3-3 3H88z"/>
-<g fill="#fff" text-anchor="middle" font-family="Verdana,DejaVu Sans,sans-serif" font-size="11">
-<text x="44" y="14">active model</text><text x="153" y="14">{version[:12]}</text>
-</g></svg>
-'''
+    url = "https://img.shields.io/badge/active%20model-" + version[:12] + "-brightgreen?style=flat"
+    rendered = subprocess.check_output(["curl", "--fail", "--silent", "--show-error", "--location", "--max-time", "20", "--retry", "2", url], text=True, timeout=70)
+    root = ET.fromstring(rendered)
+    if root.tag != "{http://www.w3.org/2000/svg}svg" or root.attrib.get("aria-label") != "active model: " + version[:12]:
+        raise ValueError("Unexpected badge response")
+    return re.sub(r"<title>.*?</title>", lambda _: "<title>Active model: " + escape(version) + "</title>", rendered, count=1)
+
 
 
 def api(repo, path, payload=None):
